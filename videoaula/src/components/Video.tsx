@@ -1,8 +1,12 @@
 import { CaretRight, DiscordLogo, FileArrowDown, Lightning } from "phosphor-react";
-import '@vime/core/themes/default.css';
 import { DefaultUi, Player, Youtube } from "@vime/react";
+import '@vime/core/themes/default.css';
 
-export function Video() {
+interface VideoProps{
+    lessonSlug: string;
+}
+
+export function Video(props: VideoProps) {
     return (
         <div className="flex-1 ">
 
@@ -12,13 +16,13 @@ export function Video() {
                         <Youtube videoId={"_UaRAQL43Vc"} />
                         <DefaultUi />
                     </Player>
-
                 </div>
             </div>
 
             <div className="p-8 max-w-[1100px] mx-auto ">
 
                 <div className="flex items-start gap-16">
+
                     <div className="flex-1">
                         <h1 className="text-2xl p-2 font-bold">Aula 01 - Abertura do evento</h1>
                         <p className="mt-4 p-2 text-gray-300 leading-relaxed">Nessa aula vamos dar início ao projeto criando a estrutura
@@ -28,6 +32,7 @@ export function Video() {
                             integrando a API GraphQL gerada pela plataforma no
                             nosso front-end utilizando Apollo Client.
                         </p>
+
                         <div className="flex items-center gap-4 mt-6">
                             <img className="h-24 w-24 rounded-full border-2 border-blue-500"
                                 src="https://avatars.githubusercontent.com/u/97312611?s=400&u=9b2a43a8f46465fb05f5855177d48289112cdcd9&v=4"
@@ -51,7 +56,6 @@ export function Video() {
                             <Lightning size={24} />
                             acesse o desafio
                         </a>
-
                     </div>
 
                 </div>
@@ -86,6 +90,7 @@ export function Video() {
                             <CaretRight size={24} />
                         </div>
                     </a>
+
                 </div>
             </div>
         </div>
